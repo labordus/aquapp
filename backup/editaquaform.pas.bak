@@ -1,0 +1,28 @@
+unit editaquaform;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs;
+
+type
+  TfrmEditAqua = class(TForm)
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  frmEditAqua: TfrmEditAqua;
+
+implementation
+
+uses uDM;
+
+{$R *.lfm}
+
+end.
+

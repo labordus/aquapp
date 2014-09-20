@@ -1,0 +1,2 @@
+- Optie: laat alleen ingevoerde dagen zien.. of alle dagen, dus ook de lege dagen
+

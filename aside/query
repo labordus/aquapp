@@ -1,0 +1,12 @@
+SELECT DISTINCT tblFood.foodNM FROM tblFood INNER JOIN (tblDag INNER JOIN tblFoodinfo ON tblDag.DagID = tblFoodinfo.DagID) ON tblFood.FoodID = tblFoodinfo.FoodID WHERE (((tblFoodinfo.DagID)=:ThisDay))
+
+
+/*WHERE (((tblUsers.USID)=:ThisUser)); */
+
+/*
+SELECT tblLichaamsInfo.DGID, tblLichaamsInfo.LICHID, tblLichamelijk.LICHOM, tblLichaamsInfo.LICHMEMO
+FROM tblLichamelijk INNER JOIN (tblDag INNER JOIN tblLichaamsInfo ON tblDag.DagID = tblLichaamsInfo.DGID)
+ON tblLichamelijk.LICHID = tblLichaamsInfo.LICHID;
+*/
+
+SELECT DISTINCT tblFood.foodNM FROM tblFood INNER JOIN (tblDag INNER JOIN tblFoodinfo ON tblDag.DagID = tblFoodinfo.DagID) ON tblFood.FoodID = tblFoodinfo.FoodID WHERE (((tblFoodinfo.DagID)=:ThisDay))

@@ -1,0 +1,239 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 395
+  HorizontalOffset = 399
+  VerticalOffset = 213
+  Width = 407
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings='
+      'foreign_keys=1'
+      'codepage='
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    Port = 0
+    Database = '/home/kelp/dev/fpc/aquapp/db/aquappdb'
+    Protocol = 'sqlite-3'
+    left = 56
+    top = 32
+  end
+  object qryDag: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from tblDag where aquaID=:ThisAqua'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ThisAqua'
+        ParamType = ptUnknown
+      end>
+    left = 48
+    top = 264
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ThisAqua'
+        ParamType = ptUnknown
+      end>
+  end
+  object dsDag: TDataSource
+    DataSet = tblDag
+    left = 337
+    top = 80
+  end
+  object qryAqua: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from tblAqua'
+    )
+    Params = <>
+    WhereMode = wmWhereAll
+    left = 48
+    top = 328
+  end
+  object dsAqua: TDataSource
+    DataSet = tblAqua
+    left = 337
+    top = 32
+  end
+  object tblDag: TZTable
+    Connection = ZConnection1
+    Active = True
+    TableName = 'tblDag'
+    MasterFields = 'aquaID'
+    MasterSource = dsAqua
+    LinkedFields = 'aquaID'
+    left = 265
+    top = 80
+    object tblDagdagID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'dagID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tblDagdagDatum: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'dagDatum'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object tblDagaquaID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'aquaID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object tblAqua: TZTable
+    Connection = ZConnection1
+    Active = True
+    TableName = 'tblAqua'
+    left = 265
+    top = 32
+    object tblAquaaquaID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'aquaID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tblAquaaquaNM: TStringField
+      DisplayWidth = 100
+      FieldKind = fkData
+      FieldName = 'aquaNM'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 100
+    end
+    object tblAquaaquaWidth: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'aquaWidth'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tblAquaaquaDepth: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'aquaDepth'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tblAquaaquaHeight: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'aquaHeight'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tblAquaaquaOpstart: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'aquaOpstart'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsAquaALL: TDataSource
+    DataSet = qryAqua
+    left = 112
+    top = 328
+  end
+  object dsDagPerAqua: TDataSource
+    DataSet = qryDag
+    left = 128
+    top = 264
+  end
+  object dsFoodinfo: TDataSource
+    DataSet = tblFoodinfo
+    left = 337
+    top = 128
+  end
+  object tblFoodinfo: TZTable
+    Connection = ZConnection1
+    Active = True
+    TableName = 'tblFoodinfo'
+    MasterFields = 'dagID'
+    MasterSource = dsDag
+    LinkedFields = 'dagID'
+    left = 264
+    top = 128
+  end
+  object dsFood: TDataSource
+    DataSet = tblFood
+    left = 337
+    top = 176
+  end
+  object tblFood: TZTable
+    Connection = ZConnection1
+    Active = True
+    TableName = 'tblFood'
+    MasterFields = 'foodID'
+    MasterSource = dsFoodinfo
+    LinkedFields = 'foodID'
+    left = 265
+    top = 176
+  end
+  object qryFoodperdag: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'SELECT DISTINCT tblFood.foodNM FROM tblFood INNER JOIN (tblDag INNER JOIN tblFoodinfo ON tblDag.DagID = tblFoodinfo.DagID) ON tblFood.FoodID = tblFoodinfo.FoodID WHERE (((tblFoodinfo.DagID)=:ThisDay))'
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'ThisDay'
+        ParamType = ptUnknown
+      end>
+    left = 265
+    top = 256
+    ParamData = <    
+      item
+        DataType = ftInteger
+        Name = 'ThisDay'
+        ParamType = ptUnknown
+      end>
+  end
+  object dsFoodperdag: TDataSource
+    DataSet = qryFoodperdag
+    left = 337
+    top = 256
+  end
+end

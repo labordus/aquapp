@@ -1,0 +1,6 @@
+* Converting file /home/kelp/dev/fpc/aquapp/Rasterform.pas *
+Replaced unit "Mask" with "MaskEdit" in uses section.
+Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+* Repairing form file /home/kelp/dev/fpc/aquapp/Rasterform.lfm *
+* Fixing used units for file /home/kelp/dev/fpc/aquapp/Rasterform.pas *
+Conversion Ready.
