@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, mainform, uDM, zcomponent, editaquaform, globals, jvYearGrid,
+  Forms, zcomponent, mainform, uDM, editaquaform, globals, jvYearGrid,
   Rasterform;
 
 {$R *.res}
