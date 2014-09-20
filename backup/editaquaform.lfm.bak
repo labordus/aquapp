@@ -1,9 +1,0 @@
-object frmEditAqua: TfrmEditAqua
-  Left = 681
-  Height = 240
-  Top = 416
-  Width = 320
-  Caption = 'Edit Aquarium'
-  Position = poMainFormCenter
-  LCLVersion = '1.2.4.0'
-end
