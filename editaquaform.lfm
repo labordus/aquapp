@@ -9,8 +9,8 @@ object frmEditAqua: TfrmEditAqua
   Position = poMainFormCenter
   LCLVersion = '1.2.4.0'
   object DateEdit1: TDateEdit
-    Left = 196
-    Height = 19
+    Left = 206
+    Height = 24
     Top = 116
     Width = 80
     CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
@@ -25,28 +25,28 @@ object frmEditAqua: TfrmEditAqua
   end
   object SpinEdit3: TSpinEdit
     Left = 206
-    Height = 19
+    Height = 24
     Top = 92
     Width = 50
     TabOrder = 1
   end
   object SpinEdit2: TSpinEdit
     Left = 206
-    Height = 19
+    Height = 24
     Top = 68
     Width = 50
     TabOrder = 2
   end
   object spinHeight: TSpinEdit
     Left = 206
-    Height = 19
+    Height = 24
     Top = 44
     Width = 50
     TabOrder = 3
   end
   object DBEdit4: TDBEdit
     Left = 116
-    Height = 19
+    Height = 24
     Top = 92
     Width = 80
     DataField = 'aquaDepth'
@@ -57,7 +57,7 @@ object frmEditAqua: TfrmEditAqua
   end
   object DBEdit5: TDBEdit
     Left = 116
-    Height = 19
+    Height = 24
     Top = 116
     Width = 80
     DataField = 'aquaOpstart'
@@ -68,31 +68,31 @@ object frmEditAqua: TfrmEditAqua
   end
   object Label3: TLabel
     Left = 48
-    Height = 13
+    Height = 14
     Top = 74
-    Width = 53
+    Width = 58
     Caption = 'Breedte :'
     ParentColor = False
   end
   object Label4: TLabel
     Left = 57
-    Height = 13
+    Height = 14
     Top = 98
-    Width = 44
+    Width = 49
     Caption = 'Diepte :'
     ParentColor = False
   end
   object Label5: TLabel
     Left = 50
-    Height = 13
+    Height = 14
     Top = 122
-    Width = 51
+    Width = 55
     Caption = 'Opstart :'
     ParentColor = False
   end
   object DBEdit1: TDBEdit
     Left = 116
-    Height = 19
+    Height = 24
     Top = 19
     Width = 80
     DataField = 'aquaNM'
@@ -103,7 +103,7 @@ object frmEditAqua: TfrmEditAqua
   end
   object DBEdit2: TDBEdit
     Left = 116
-    Height = 19
+    Height = 24
     Top = 44
     Width = 80
     DataField = 'aquaHeight'
@@ -114,7 +114,7 @@ object frmEditAqua: TfrmEditAqua
   end
   object DBEdit3: TDBEdit
     Left = 116
-    Height = 19
+    Height = 24
     Top = 68
     Width = 80
     DataField = 'aquaWidth'
@@ -125,17 +125,17 @@ object frmEditAqua: TfrmEditAqua
   end
   object Label1: TLabel
     Left = 60
-    Height = 13
+    Height = 14
     Top = 25
-    Width = 41
+    Width = 44
     Caption = 'Naam :'
     ParentColor = False
   end
   object Label2: TLabel
     Left = 53
-    Height = 13
+    Height = 14
     Top = 50
-    Width = 48
+    Width = 54
     Caption = 'Hoogte :'
     ParentColor = False
   end
