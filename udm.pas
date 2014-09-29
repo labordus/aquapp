@@ -5,7 +5,7 @@ unit uDM;
 interface
 
 uses
-  Classes, SysUtils, db, FileUtil, ZConnection, ZDataset;
+  Classes, SysUtils, DB, FileUtil, ZConnection, ZDataset;
 
 type
 
@@ -42,8 +42,8 @@ type
     { public declarations }
   end;
 
-  procedure SwitchAqua(iAqua: Integer);
-  procedure SwitchDay();
+procedure SwitchAqua(iAqua: integer);
+procedure SwitchDay();
 
 var
   DM: TDM;
@@ -52,13 +52,13 @@ implementation
 
 {$R *.lfm}
 
-procedure SwitchAqua(iAqua: Integer);
+procedure SwitchAqua(iAqua: integer);
 begin
   with DM.qryDag do
   begin
-    close;
+    Close;
     ParamByName('ThisAqua').Value := iAqua;
-    open;
+    Open;
   end;
 end;
 
@@ -66,10 +66,10 @@ procedure SwitchDay();
 begin
   with DM.qryFoodperdag do
   begin
-    close;
-//    ParamByName('ThisDay').Value := 1;
-      ParamByName('ThisDay').Value := DM.qryDag.FieldByName('dagID').AsInteger;
-    open;
+    Close;
+    //    ParamByName('ThisDay').Value := 1;
+    ParamByName('ThisDay').Value := DM.qryDag.FieldByName('dagID').AsInteger;
+    Open;
   end;
 end;
 
