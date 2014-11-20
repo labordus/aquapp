@@ -7,7 +7,7 @@ object Form1: TForm1
   ClientHeight = 704
   ClientWidth = 992
   Position = poDesktopCenter
-  LCLVersion = '1.2.4.0'
+  LCLVersion = '1.2.6.0'
   object PageControl1: TPageControl
     Left = 8
     Height = 536
@@ -19,7 +19,7 @@ object Form1: TForm1
     TabPosition = tpLeft
     object tabAqua: TTabSheet
       Caption = 'Aquarium informatie'
-      ClientHeight = 534
+      ClientHeight = 530
       ClientWidth = 304
       object Label1: TLabel
         Left = 60
@@ -155,11 +155,11 @@ object Form1: TForm1
     end
     object tabDagen: TTabSheet
       Caption = 'Dagen'
-      ClientHeight = 534
+      ClientHeight = 530
       ClientWidth = 304
       object DBGrid3: TDBGrid
         Left = 0
-        Height = 534
+        Height = 530
         Top = 0
         Width = 304
         Align = alClient
@@ -178,7 +178,7 @@ object Form1: TForm1
     end
     object tabDagOverzicht: TTabSheet
       Caption = 'Dagoverzicht'
-      ClientHeight = 534
+      ClientHeight = 530
       ClientWidth = 304
       object Label6: TLabel
         Left = 40
@@ -265,7 +265,7 @@ object Form1: TForm1
     TabOrder = 2
   end
   object DBGrid6: TDBGrid
-    Left = 632
+    Left = 624
     Height = 144
     Top = 128
     Width = 248
