@@ -35,7 +35,7 @@ type
     tblAqua: TZTable;
     tblFoodinfo: TZTable;
     tblFood: TZTable;
-    qryFoodperdag: TZQuery;
+    qryFoodPerDag: TZQuery;
   private
     { private declarations }
   public
