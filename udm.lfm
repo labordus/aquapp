@@ -187,7 +187,6 @@ object DM: TDM
   end
   object tblFoodinfo: TZTable
     Connection = ZConnection1
-    Active = True
     TableName = 'tblFoodinfo'
     MasterFields = 'dagID'
     MasterSource = dsDag
@@ -210,30 +209,33 @@ object DM: TDM
     left = 265
     top = 176
   end
-  object qryFoodperdag: TZQuery
+  object dsFoodperdag: TDataSource
+    DataSet = qryFoodPerDag
+    left = 168
+    top = 128
+  end
+  object qryFoodPerDag: TZQuery
     Connection = ZConnection1
     Active = True
     SQL.Strings = (
-      'SELECT DISTINCT tblFood.foodNM FROM tblFood INNER JOIN (tblDag INNER JOIN tblFoodinfo ON tblDag.DagID = tblFoodinfo.DagID) ON tblFood.FoodID = tblFoodinfo.FoodID WHERE (((tblFoodinfo.DagID)=:ThisDay))'
+      'SELECT * FROM tblFood JOIN tblFOODINFO USING (foodID) WHERE TBLFOODINFO.dagID = :ThisDay;'
     )
     Params = <    
       item
-        DataType = ftInteger
+        DataType = ftUnknown
         Name = 'ThisDay'
         ParamType = ptUnknown
       end>
-    left = 265
-    top = 256
+    DataSource = dsDag
+    MasterFields = 'foodID'
+    MasterSource = dsFoodinfo
+    left = 72
+    top = 128
     ParamData = <    
       item
-        DataType = ftInteger
+        DataType = ftUnknown
         Name = 'ThisDay'
         ParamType = ptUnknown
       end>
-  end
-  object dsFoodperdag: TDataSource
-    DataSet = qryFoodperdag
-    left = 337
-    top = 256
   end
 end
