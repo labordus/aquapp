@@ -13,45 +13,30 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    btnNextDay: TButton;
     Button1: TButton;
-    DateEdit1: TDateEdit;
-    DateEdit2: TDateEdit;
-    DBEdit1: TDBEdit;
-    DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
-    DBEdit4: TDBEdit;
-    DBEdit5: TDBEdit;
+    btnPrevDay: TButton;
+    DBGrid1: TDBGrid;
     DBGrid3: TDBGrid;
-    DBGrid4: TDBGrid;
-    DBGrid5: TDBGrid;
-    DBGrid6: TDBGrid;
     cbxAqua: TDBLookupComboBox;
-    DBText1: TDBText;
+    DBGrid5: TDBGrid;
     DBText2: TDBText;
-    Label1: TLabel;
     Label10: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
-    Label7: TLabel;
-    Label8: TLabel;
-    Label9: TLabel;
     PageControl1: TPageControl;
     btnEditAqua: TSpeedButton;
-    spinHeight: TSpinEdit;
-    SpinEdit2: TSpinEdit;
-    SpinEdit3: TSpinEdit;
-    tabAqua: TTabSheet;
-    tabDagen: TTabSheet;
-    tabDagOverzicht: TTabSheet;
+    tabOverzicht: TTabSheet;
+    tabDaginvoer: TTabSheet;
     procedure btnEditAquaClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure cbxAquaChange(Sender: TObject);
     procedure DBGrid3CellClick(Column: TColumn);
+    procedure DBGrid5CellClick(Column: TColumn);
+    procedure DBGrid5UserCheckboxState(Sender: TObject; Column: TColumn;
+      var AState: TCheckboxState);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
-    { private declarations }
+    RecList: TBookmarklist;
   public
     { public declarations }
   end;
@@ -105,6 +90,31 @@ end;
 procedure TForm1.DBGrid3CellClick(Column: TColumn);
 begin
   SwitchDay;
+end;
+
+procedure TForm1.DBGrid5CellClick(Column: TColumn);
+begin
+  if Column.Index=1 then
+    RecList.CurrentRowSelected := not RecList.CurrentRowSelected;
+end;
+
+procedure TForm1.DBGrid5UserCheckboxState(Sender: TObject; Column: TColumn;
+  var AState: TCheckboxState);
+begin
+  if RecList.CurrentRowSelected then
+    AState := cbChecked
+  else
+    AState := cbUnchecked;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  RecList := TBookmarkList.Create(DbGrid1);
+end;
+
+procedure TForm1.FormDestroy(Sender: TObject);
+begin
+  RecList.Free;
 end;
 
 
