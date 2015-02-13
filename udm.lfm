@@ -15,7 +15,7 @@ object DM: TDM
     )
     Connected = True
     Port = 0
-    Database = '/home/kelp/dev/fpc/aquapp/db/aquappdb'
+    Database = '/home/kelp/dev/aquapp/db/aquappdb'
     Protocol = 'sqlite-3'
     left = 56
     top = 32
@@ -187,6 +187,7 @@ object DM: TDM
   end
   object tblFoodinfo: TZTable
     Connection = ZConnection1
+    Active = True
     TableName = 'tblFoodinfo'
     MasterFields = 'dagID'
     MasterSource = dsDag
@@ -203,9 +204,6 @@ object DM: TDM
     Connection = ZConnection1
     Active = True
     TableName = 'tblFood'
-    MasterFields = 'foodID'
-    MasterSource = dsFoodinfo
-    LinkedFields = 'foodID'
     left = 265
     top = 176
   end
@@ -237,5 +235,12 @@ object DM: TDM
         Name = 'ThisDay'
         ParamType = ptUnknown
       end>
+  end
+  object ZTable1: TZTable
+    Connection = ZConnection1
+    Active = True
+    TableName = 'tblFoodinfo'
+    left = 276
+    top = 297
   end
 end

@@ -36,6 +36,7 @@ type
     tblFoodinfo: TZTable;
     tblFood: TZTable;
     qryFoodPerDag: TZQuery;
+    ZTable1: TZTable;
   private
     { private declarations }
   public
