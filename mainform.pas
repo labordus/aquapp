@@ -17,6 +17,7 @@ type
     Button1: TButton;
     btnPrevDay: TButton;
     DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
     DBGrid3: TDBGrid;
     cbxAqua: TDBLookupComboBox;
     DBGrid5: TDBGrid;
@@ -27,12 +28,15 @@ type
     tabOverzicht: TTabSheet;
     tabDaginvoer: TTabSheet;
     procedure btnEditAquaClick(Sender: TObject);
+    procedure btnNextDayClick(Sender: TObject);
+    procedure btnPrevDayClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure cbxAquaChange(Sender: TObject);
     procedure DBGrid3CellClick(Column: TColumn);
     procedure DBGrid5CellClick(Column: TColumn);
     procedure DBGrid5UserCheckboxState(Sender: TObject; Column: TColumn;
       var AState: TCheckboxState);
+    procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
@@ -58,6 +62,18 @@ uses uDM, editaquaform, globals, rasterform;
 procedure TForm1.btnEditAquaClick(Sender: TObject);
 begin
   Openeditaquaform;
+end;
+
+procedure TForm1.btnNextDayClick(Sender: TObject);
+begin
+  DM.qryDag.Next;
+  SwitchDay;
+end;
+
+procedure TForm1.btnPrevDayClick(Sender: TObject);
+begin
+  DM.qryDag.Prior;
+  SwitchDay;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -105,6 +121,12 @@ begin
     AState := cbChecked
   else
     AState := cbUnchecked;
+end;
+
+procedure TForm1.FormActivate(Sender: TObject);
+begin
+  DM.tblAqua.Locate('aquaNM', cbxAqua.Caption, []);
+  SwitchAqua(DM.tblAqua.FieldByName('aquaID').AsInteger);
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
