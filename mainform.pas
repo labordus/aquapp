@@ -6,28 +6,37 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
-  DBCtrls, ComCtrls, StdCtrls, Spin, EditBtn, Buttons, ExtCtrls;
+  DBCtrls, ComCtrls, StdCtrls, Spin, EditBtn, Buttons, ExtCtrls, maskedit,
+  DateTimePicker;
 
 type
 
-  { TForm1 }
+  { TfrmMain }
 
-  TForm1 = class(TForm)
+  TfrmMain = class(TForm)
+    btnConfig: TButton;
+    btnFoodRemove: TButton;
     btnNextDay: TButton;
     Button1: TButton;
     btnPrevDay: TButton;
-    DBGrid1: TDBGrid;
+    btnFoodAdd: TButton;
+    gridFoodPerDag: TDBGrid;
     DBGrid2: TDBGrid;
     DBGrid3: TDBGrid;
     cbxAqua: TDBLookupComboBox;
     DBGrid5: TDBGrid;
     DBText2: TDBText;
+    dtFoodTime: TDateTimePicker;
     Label10: TLabel;
     PageControl1: TPageControl;
     btnEditAqua: TSpeedButton;
+    spinFoodAmount: TSpinEdit;
     tabOverzicht: TTabSheet;
     tabDaginvoer: TTabSheet;
+    procedure btnConfigClick(Sender: TObject);
+    procedure btnFoodAddClick(Sender: TObject);
     procedure btnEditAquaClick(Sender: TObject);
+    procedure btnFoodRemoveClick(Sender: TObject);
     procedure btnNextDayClick(Sender: TObject);
     procedure btnPrevDayClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -48,35 +57,60 @@ type
 procedure Openeditaquaform;
 
 var
-  Form1: TForm1;
+  frmMain: TfrmMain;
 
 implementation
 
-uses uDM, editaquaform, globals, rasterform;
+uses uDM, editaquaform, globals, rasterform, configform;
 
 {$R *.lfm}
 
-{ TForm1 }
+{ TfrmMain }
 
-
-procedure TForm1.btnEditAquaClick(Sender: TObject);
+procedure TfrmMain.btnEditAquaClick(Sender: TObject);
 begin
   Openeditaquaform;
 end;
 
-procedure TForm1.btnNextDayClick(Sender: TObject);
+procedure TfrmMain.btnFoodRemoveClick(Sender: TObject);
+var
+  iDay, iFood: integer;
+begin
+  iDay := DM.qryDag.FieldByName('dagID').AsInteger;
+  iFood := DM.qryFoodPerDag.FieldByName('foodID').AsInteger;
+  RemoveFood(iDay, iFood);
+  DM.qryFoodPerDag.Refresh;
+end;
+
+procedure TfrmMain.btnFoodAddClick(Sender: TObject);
+begin
+  AddFood(spinFoodAmount.Value, dtFoodTime.Time);
+  DM.qryFoodPerDag.Refresh;
+end;
+
+procedure TfrmMain.btnConfigClick(Sender: TObject);
+begin
+  frmConfig := TfrmConfig.Create(Application);
+  try
+    if frmConfig.ShowModal = mrOk then;
+  finally
+    FreeAndNil(frmConfig);
+  end;
+end;
+
+procedure TfrmMain.btnNextDayClick(Sender: TObject);
 begin
   DM.qryDag.Next;
   SwitchDay;
 end;
 
-procedure TForm1.btnPrevDayClick(Sender: TObject);
+procedure TfrmMain.btnPrevDayClick(Sender: TObject);
 begin
   DM.qryDag.Prior;
   SwitchDay;
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TfrmMain.Button1Click(Sender: TObject);
 begin
   frmRaster := TfrmRaster.Create(Application);
   try
@@ -97,24 +131,24 @@ begin
 end;
 
 
-procedure TForm1.cbxAquaChange(Sender: TObject);
+procedure TfrmMain.cbxAquaChange(Sender: TObject);
 begin
   DM.tblAqua.Locate('aquaNM', cbxAqua.Caption, []);
   SwitchAqua(DM.tblAqua.FieldByName('aquaID').AsInteger);
 end;
 
-procedure TForm1.DBGrid3CellClick(Column: TColumn);
+procedure TfrmMain.DBGrid3CellClick(Column: TColumn);
 begin
   SwitchDay;
 end;
 
-procedure TForm1.DBGrid5CellClick(Column: TColumn);
+procedure TfrmMain.DBGrid5CellClick(Column: TColumn);
 begin
   if Column.Index=1 then
     RecList.CurrentRowSelected := not RecList.CurrentRowSelected;
 end;
 
-procedure TForm1.DBGrid5UserCheckboxState(Sender: TObject; Column: TColumn;
+procedure TfrmMain.DBGrid5UserCheckboxState(Sender: TObject; Column: TColumn;
   var AState: TCheckboxState);
 begin
   if RecList.CurrentRowSelected then
@@ -123,18 +157,18 @@ begin
     AState := cbUnchecked;
 end;
 
-procedure TForm1.FormActivate(Sender: TObject);
+procedure TfrmMain.FormActivate(Sender: TObject);
 begin
   DM.tblAqua.Locate('aquaNM', cbxAqua.Caption, []);
   SwitchAqua(DM.tblAqua.FieldByName('aquaID').AsInteger);
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-  RecList := TBookmarkList.Create(DbGrid1);
+  RecList := TBookmarkList.Create(gridFoodPerDag);
 end;
 
-procedure TForm1.FormDestroy(Sender: TObject);
+procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   RecList.Free;
 end;
