@@ -1,0 +1,250 @@
+object frmConfig: TfrmConfig
+  Left = 1176
+  Height = 441
+  Top = 134
+  Width = 506
+  Caption = 'frmConfig'
+  ClientHeight = 441
+  ClientWidth = 506
+  DockSite = True
+  Position = poMainFormCenter
+  LCLVersion = '1.2.6.0'
+  object pageConf: TPageControl
+    Left = 0
+    Height = 441
+    Top = 0
+    Width = 506
+    ActivePage = tabAqua
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object tabAqua: TTabSheet
+      Caption = 'tabAqua'
+      ClientHeight = 408
+      ClientWidth = 500
+      object DateEdit1: TDateEdit
+        Left = 206
+        Height = 25
+        Top = 116
+        Width = 80
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+        OKCaption = 'OK'
+        CancelCaption = 'Cancel'
+        DateOrder = doNone
+        ButtonWidth = 23
+        CharCase = ecNormal
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object SpinEdit3: TSpinEdit
+        Left = 206
+        Height = 25
+        Top = 92
+        Width = 50
+        TabOrder = 1
+      end
+      object SpinEdit2: TSpinEdit
+        Left = 206
+        Height = 25
+        Top = 68
+        Width = 50
+        TabOrder = 2
+      end
+      object spinHeight: TSpinEdit
+        Left = 206
+        Height = 25
+        Top = 44
+        Width = 50
+        TabOrder = 3
+      end
+      object DBEdit4: TDBEdit
+        Left = 116
+        Height = 25
+        Top = 92
+        Width = 80
+        DataField = 'aquaDepth'
+        DataSource = DM.dsAqua
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 4
+      end
+      object DBEdit5: TDBEdit
+        Left = 116
+        Height = 25
+        Top = 116
+        Width = 80
+        DataField = 'aquaOpstart'
+        DataSource = DM.dsAqua
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 5
+      end
+      object Label3: TLabel
+        Left = 48
+        Height = 15
+        Top = 74
+        Width = 59
+        Caption = 'Breedte :'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 57
+        Height = 15
+        Top = 98
+        Width = 50
+        Caption = 'Diepte :'
+        ParentColor = False
+      end
+      object Label5: TLabel
+        Left = 50
+        Height = 15
+        Top = 122
+        Width = 56
+        Caption = 'Opstart :'
+        ParentColor = False
+      end
+      object DBEdit1: TDBEdit
+        Left = 116
+        Height = 25
+        Top = 19
+        Width = 80
+        DataField = 'aquaNM'
+        DataSource = DM.dsAqua
+        CharCase = ecNormal
+        MaxLength = 100
+        TabOrder = 6
+      end
+      object DBEdit2: TDBEdit
+        Left = 116
+        Height = 25
+        Top = 44
+        Width = 80
+        DataField = 'aquaHeight'
+        DataSource = DM.dsAqua
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 7
+      end
+      object DBEdit3: TDBEdit
+        Left = 116
+        Height = 25
+        Top = 68
+        Width = 80
+        DataField = 'aquaWidth'
+        DataSource = DM.dsAqua
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 8
+      end
+      object Label1: TLabel
+        Left = 60
+        Height = 15
+        Top = 25
+        Width = 47
+        Caption = 'Naam :'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 53
+        Height = 15
+        Top = 50
+        Width = 55
+        Caption = 'Hoogte :'
+        ParentColor = False
+      end
+    end
+    object tabFood: TTabSheet
+      Caption = 'tabFood'
+      ClientHeight = 408
+      ClientWidth = 500
+      object gridFood: TDBGrid
+        Left = 0
+        Height = 381
+        Top = 0
+        Width = 500
+        Align = alClient
+        Color = clWindow
+        Columns = <>
+        DataSource = DM.dsFood
+        TabOrder = 0
+      end
+      object Panel1: TPanel
+        Left = 0
+        Height = 27
+        Top = 381
+        Width = 500
+        Align = alBottom
+        AutoSize = True
+        ClientHeight = 27
+        ClientWidth = 500
+        TabOrder = 1
+        object navFood: TDBNavigator
+          Left = 1
+          Height = 25
+          Top = 1
+          Width = 498
+          Align = alBottom
+          BevelOuter = bvNone
+          ChildSizing.EnlargeHorizontal = crsScaleChilds
+          ChildSizing.EnlargeVertical = crsScaleChilds
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 100
+          ClientHeight = 25
+          ClientWidth = 498
+          DataSource = DM.dsFood
+          Options = []
+          TabOrder = 0
+        end
+      end
+    end
+    object tabWaardes: TTabSheet
+      Caption = 'tabWaardes'
+      ClientHeight = 408
+      ClientWidth = 500
+      object gridWaardes: TDBGrid
+        Left = 0
+        Height = 381
+        Top = 0
+        Width = 500
+        Align = alClient
+        Color = clWindow
+        Columns = <>
+        DataSource = DM.dsWaardes
+        TabOrder = 0
+      end
+      object Panel2: TPanel
+        Left = 0
+        Height = 27
+        Top = 381
+        Width = 500
+        Align = alBottom
+        AutoSize = True
+        ClientHeight = 27
+        ClientWidth = 500
+        TabOrder = 1
+        object navWaardes: TDBNavigator
+          Left = 1
+          Height = 25
+          Top = 1
+          Width = 498
+          Align = alBottom
+          BevelOuter = bvNone
+          ChildSizing.EnlargeHorizontal = crsScaleChilds
+          ChildSizing.EnlargeVertical = crsScaleChilds
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 100
+          ClientHeight = 25
+          ClientWidth = 498
+          DataSource = DM.dsWaardes
+          Options = []
+          TabOrder = 0
+        end
+      end
+    end
+  end
+end
