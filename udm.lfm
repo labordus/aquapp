@@ -1,9 +1,9 @@
 object DM: TDM
   OldCreateOrder = False
-  Height = 395
+  Height = 637
   HorizontalOffset = 399
   VerticalOffset = 213
-  Width = 407
+  Width = 858
   object ZConnection1: TZConnection
     ControlsCodePage = cCP_UTF8
     AutoEncodeStrings = False
@@ -202,6 +202,7 @@ object DM: TDM
   end
   object tblFood: TZTable
     Connection = ZConnection1
+    BeforeDelete = tblFoodBeforeDelete
     Active = True
     TableName = 'tblFood'
     left = 265
@@ -235,6 +236,72 @@ object DM: TDM
         Name = 'ThisDay'
         ParamType = ptUnknown
       end>
+    object qryFoodPerDagfoodID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'foodID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryFoodPerDagfoodNM: TStringField
+      DisplayWidth = 100
+      FieldKind = fkData
+      FieldName = 'foodNM'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 100
+    end
+    object qryFoodPerDagfoodOM: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'foodOM'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qryFoodPerDagdagID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'dagID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryFoodPerDagfoodinfoAmount: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'foodinfoAmount'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object qryFoodPerDagfoodinfoTime: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'foodinfoTime'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = 'hh:nn'
+    end
   end
   object ZTable1: TZTable
     Connection = ZConnection1
@@ -242,5 +309,50 @@ object DM: TDM
     TableName = 'tblFoodinfo'
     left = 276
     top = 297
+  end
+  object qryDelFoodinfo: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'DELETE FROM tblfoodinfo'
+      'WHERE dagid = :ThisDay and foodid = :ThisFood;'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'Thisday'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'Thisfood'
+        ParamType = ptUnknown
+      end>
+    DataSource = dsFoodinfo
+    left = 112
+    top = 200
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'Thisday'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'Thisfood'
+        ParamType = ptUnknown
+      end>
+  end
+  object tblWaardes: TZTable
+    Connection = ZConnection1
+    Active = True
+    TableName = 'tblWaardes'
+    left = 514
+    top = 40
+  end
+  object dsWaardes: TDataSource
+    DataSet = tblWaardes
+    left = 588
+    top = 41
   end
 end
