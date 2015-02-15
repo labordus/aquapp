@@ -28,18 +28,21 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="3">
+    <RequiredPackages Count="4">
       <Item1>
-        <PackageName Value="zcomponent"/>
+        <PackageName Value="DateTimeCtrls"/>
       </Item1>
       <Item2>
-        <PackageName Value="FCL"/>
+        <PackageName Value="zcomponent"/>
       </Item2>
       <Item3>
-        <PackageName Value="LCL"/>
+        <PackageName Value="FCL"/>
       </Item3>
+      <Item4>
+        <PackageName Value="LCL"/>
+      </Item4>
     </RequiredPackages>
-    <Units Count="8">
+    <Units Count="10">
       <Unit0>
         <Filename Value="aquapp.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -48,7 +51,7 @@
       <Unit1>
         <Filename Value="mainform.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainform"/>
@@ -91,6 +94,22 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Rasterform"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="configform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmConfig"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="configform"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+      </Unit9>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
