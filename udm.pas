@@ -12,6 +12,7 @@ type
   { TDM }
 
   TDM = class(TDataModule)
+    dsBewoner: TDataSource;
     dsFoodperdag: TDatasource;
     dsFood: TDatasource;
     dsFoodinfo: TDatasource;
@@ -19,6 +20,8 @@ type
     dsAquaALL: TDatasource;
     dsAqua: TDatasource;
     dsDag: TDatasource;
+    dsToevoeg: TDataSource;
+    dsToevoegsoort: TDataSource;
     dsWaardes: TDataSource;
     qryDelFoodinfo: TZQuery;
     qryFoodPerDagdagID: TLargeintField;
@@ -27,15 +30,18 @@ type
     qryFoodPerDagfoodinfoTime: TTimeField;
     qryFoodPerDagfoodNM: TStringField;
     qryFoodPerDagfoodOM: TStringField;
+    qryToevoegsoort: TZQuery;
     tblAquaaquaDepth: TLargeintField;
     tblAquaaquaHeight: TLargeintField;
     tblAquaaquaID: TLargeintField;
     tblAquaaquaNM: TStringField;
     tblAquaaquaOpstart: TDateField;
     tblAquaaquaWidth: TLargeintField;
+    tblBewoner: TZTable;
     tblDagaquaID: TLargeintField;
     tblDagdagDatum: TDateField;
     tblDagdagID: TLargeintField;
+    tblToevoeg: TZTable;
     tblWaardes: TZTable;
     ZConnection1: TZConnection;
     qryDag: TZQuery;

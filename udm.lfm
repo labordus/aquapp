@@ -355,4 +355,54 @@ object DM: TDM
     left = 588
     top = 41
   end
+  object tblBewoner: TZTable
+    Connection = ZConnection1
+    Active = True
+    TableName = 'tblBewoner'
+    left = 517
+    top = 116
+  end
+  object dsBewoner: TDataSource
+    DataSet = tblBewoner
+    left = 600
+    top = 116
+  end
+  object tblToevoeg: TZTable
+    Connection = ZConnection1
+    Active = True
+    TableName = 'tblToevoeg'
+    left = 612
+    top = 216
+  end
+  object dsToevoeg: TDataSource
+    DataSet = tblToevoeg
+    left = 717
+    top = 216
+  end
+  object dsToevoegsoort: TDataSource
+    left = 717
+    top = 288
+  end
+  object qryToevoegsoort: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM tblToevoegsoort JOIN tblToevoeg USING (toevoegsoortID) WHERE TBLTOEVOEG.toevoegID = :Toevoeg;'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'Toevoeg'
+        ParamType = ptUnknown
+      end>
+    DataSource = dsToevoeg
+    left = 612
+    top = 288
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'Toevoeg'
+        ParamType = ptUnknown
+      end>
+  end
 end

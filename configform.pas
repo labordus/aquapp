@@ -20,7 +20,10 @@ type
     DBEdit4: TDBEdit;
     DBEdit5: TDBEdit;
     gridFood: TDBGrid;
+    gridToevoeg: TDBGrid;
+    gridToevoegsoort: TDBGrid;
     gridWaardes: TDBGrid;
+    gridWaardes1: TDBGrid;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -28,15 +31,23 @@ type
     Label5: TLabel;
     navFood: TDBNavigator;
     navWaardes: TDBNavigator;
-    pageConf: TPageControl;
+    navWaardes1: TDBNavigator;
+    pageConfData: TPageControl;
+    PageConf: TPageControl;
     Panel1: TPanel;
     Panel2: TPanel;
+    Panel3: TPanel;
     SpinEdit2: TSpinEdit;
     SpinEdit3: TSpinEdit;
     spinHeight: TSpinEdit;
-    tabFood: TTabSheet;
     tabAqua: TTabSheet;
+    tabBewoner: TTabSheet;
+    tabFood: TTabSheet;
+    tabToevoegingen: TTabSheet;
+    tabTabelOnderhoud: TTabSheet;
+    TabSheet2: TTabSheet;
     tabWaardes: TTabSheet;
+    procedure gridToevoegCellClick(Column: TColumn);
   private
     { private declarations }
   public
@@ -51,6 +62,18 @@ implementation
 uses uDM;
 
 {$R *.lfm}
+
+{ TfrmConfig }
+
+procedure TfrmConfig.gridToevoegCellClick(Column: TColumn);
+begin
+  with DM.qryToevoegsoort do
+  begin
+    Close;
+    ParamByName('Toevoeg').Value := DM.tblToevoeg.FieldByName('toevoegsoortID').AsInteger;
+    Open;
+  end;
+end;
 
 { TfrmConfig }
 
