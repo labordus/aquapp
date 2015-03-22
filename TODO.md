@@ -1,0 +1,2 @@
+- [ ] Actieve dag formateren.
+- [ ] Huidige dag-record aanmaken bij opstart.
