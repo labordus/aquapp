@@ -5,3 +5,279 @@ msgstr "Content-Type: text/plain; charset=UTF-8"
 msgid "vandaag"
 msgstr ""
 
+#: tform1.btnaddfood.caption
+msgid "Food toevoegen"
+msgstr ""
+
+#: tform1.btnnextday.caption
+msgctxt "tform1.btnnextday.caption"
+msgid "btnNextDay"
+msgstr ""
+
+#: tform1.btnprevday.caption
+msgctxt "tform1.btnprevday.caption"
+msgid "btnPrevDay"
+msgstr ""
+
+#: tform1.button1.caption
+msgctxt "tform1.button1.caption"
+msgid "Show Raster"
+msgstr ""
+
+#: tform1.caption
+msgctxt "tform1.caption"
+msgid "AquaApp"
+msgstr ""
+
+#: tform1.dbgrid1.columns[0].title.caption
+msgctxt "tform1.dbgrid1.columns[0].title.caption"
+msgid "foodNM"
+msgstr ""
+
+#: tform1.dbgrid1.columns[1].title.caption
+msgctxt "tform1.dbgrid1.columns[1].title.caption"
+msgid "foodinfoAmount"
+msgstr ""
+
+#: tform1.dbgrid1.columns[2].title.caption
+msgctxt "tform1.dbgrid1.columns[2].title.caption"
+msgid "foodinfoTime"
+msgstr ""
+
+#: tform1.dbgrid2.columns[0].title.caption
+msgctxt "TFORM1.DBGRID2.COLUMNS[0].TITLE.CAPTION"
+msgid "foodNM"
+msgstr ""
+
+#: tform1.dbgrid3.columns[0].title.caption
+msgctxt "tform1.dbgrid3.columns[0].title.caption"
+msgid "dagDatum"
+msgstr ""
+
+#: tform1.dbgrid5.columns[0].title.caption
+msgctxt "tform1.dbgrid5.columns[0].title.caption"
+msgid "Title"
+msgstr ""
+
+#: tform1.dbgrid5.columns[1].title.caption
+msgctxt "TFORM1.DBGRID5.COLUMNS[1].TITLE.CAPTION"
+msgid "foodNM"
+msgstr ""
+
+#: tform1.dbgrid5.columns[2].title.caption
+msgctxt "tform1.dbgrid5.columns[2].title.caption"
+msgid "foodOM"
+msgstr ""
+
+#: tform1.label10.caption
+msgctxt "TFORM1.LABEL10.CAPTION"
+msgid "Actieve dag is.."
+msgstr ""
+
+#: tform1.tabdaginvoer.caption
+msgctxt "tform1.tabdaginvoer.caption"
+msgid "Daginvoer"
+msgstr ""
+
+#: tform1.taboverzicht.caption
+msgctxt "tform1.taboverzicht.caption"
+msgid "Overzicht"
+msgstr ""
+
+#: tfrmconfig.caption
+msgid "frmConfig"
+msgstr ""
+
+#: tfrmconfig.dateedit1.cancelcaption
+msgctxt "TFRMCONFIG.DATEEDIT1.CANCELCAPTION"
+msgid "Cancel"
+msgstr ""
+
+#: tfrmconfig.dateedit1.okcaption
+msgctxt "TFRMCONFIG.DATEEDIT1.OKCAPTION"
+msgid "OK"
+msgstr ""
+
+#: tfrmconfig.label1.caption
+msgctxt "TFRMCONFIG.LABEL1.CAPTION"
+msgid "Naam :"
+msgstr ""
+
+#: tfrmconfig.label2.caption
+msgctxt "TFRMCONFIG.LABEL2.CAPTION"
+msgid "Hoogte :"
+msgstr ""
+
+#: tfrmconfig.label3.caption
+msgctxt "TFRMCONFIG.LABEL3.CAPTION"
+msgid "Breedte :"
+msgstr ""
+
+#: tfrmconfig.label4.caption
+msgctxt "TFRMCONFIG.LABEL4.CAPTION"
+msgid "Diepte :"
+msgstr ""
+
+#: tfrmconfig.label5.caption
+msgctxt "TFRMCONFIG.LABEL5.CAPTION"
+msgid "Opstart :"
+msgstr ""
+
+#: tfrmconfig.tabaqua.caption
+msgid "tabAqua"
+msgstr ""
+
+#: tfrmconfig.tabbewoner.caption
+msgid "tabBewoner"
+msgstr ""
+
+#: tfrmconfig.tabfood.caption
+msgid "tabFood"
+msgstr ""
+
+#: tfrmconfig.tabsheet2.caption
+msgid "TabSheet2"
+msgstr ""
+
+#: tfrmconfig.tabtabelonderhoud.caption
+msgid "tabTabelOnderhoud"
+msgstr ""
+
+#: tfrmconfig.tabtoevoegingen.caption
+msgid "tabToevoegingen"
+msgstr ""
+
+#: tfrmconfig.tabwaardes.caption
+msgid "tabWaardes"
+msgstr ""
+
+#: tfrmeditaqua.caption
+msgid "Edit Aquarium"
+msgstr ""
+
+#: tfrmeditaqua.dateedit1.cancelcaption
+msgctxt "tfrmeditaqua.dateedit1.cancelcaption"
+msgid "Cancel"
+msgstr ""
+
+#: tfrmeditaqua.dateedit1.okcaption
+msgctxt "tfrmeditaqua.dateedit1.okcaption"
+msgid "OK"
+msgstr ""
+
+#: tfrmeditaqua.label1.caption
+msgctxt "tfrmeditaqua.label1.caption"
+msgid "Naam :"
+msgstr ""
+
+#: tfrmeditaqua.label2.caption
+msgctxt "tfrmeditaqua.label2.caption"
+msgid "Hoogte :"
+msgstr ""
+
+#: tfrmeditaqua.label3.caption
+msgctxt "tfrmeditaqua.label3.caption"
+msgid "Breedte :"
+msgstr ""
+
+#: tfrmeditaqua.label4.caption
+msgctxt "tfrmeditaqua.label4.caption"
+msgid "Diepte :"
+msgstr ""
+
+#: tfrmeditaqua.label5.caption
+msgctxt "tfrmeditaqua.label5.caption"
+msgid "Opstart :"
+msgstr ""
+
+#: tfrmmain.btnaddday.caption
+msgid "btnAddDay"
+msgstr ""
+
+#: tfrmmain.btnconfig.caption
+msgid "btnConfig"
+msgstr ""
+
+#: tfrmmain.btnfoodadd.caption
+msgid "Toevoegen ->"
+msgstr ""
+
+#: tfrmmain.btnfoodremove.caption
+msgid "<- Verwijderen"
+msgstr ""
+
+#: tfrmmain.btnnextday.caption
+msgctxt "TFRMMAIN.BTNNEXTDAY.CAPTION"
+msgid "btnNextDay"
+msgstr ""
+
+#: tfrmmain.btnprevday.caption
+msgctxt "TFRMMAIN.BTNPREVDAY.CAPTION"
+msgid "btnPrevDay"
+msgstr ""
+
+#: tfrmmain.button1.caption
+msgctxt "TFRMMAIN.BUTTON1.CAPTION"
+msgid "Show Raster"
+msgstr ""
+
+#: tfrmmain.caption
+msgctxt "TFRMMAIN.CAPTION"
+msgid "AquaApp"
+msgstr ""
+
+#: tfrmmain.dbgrid2.columns[0].title.caption
+msgctxt "TFRMMAIN.DBGRID2.COLUMNS[0].TITLE.CAPTION"
+msgid "foodNM"
+msgstr ""
+
+#: tfrmmain.dbgrid3.columns[0].title.caption
+msgctxt "TFRMMAIN.DBGRID3.COLUMNS[0].TITLE.CAPTION"
+msgid "dagDatum"
+msgstr ""
+
+#: tfrmmain.dbgrid5.columns[0].title.caption
+msgctxt "TFRMMAIN.DBGRID5.COLUMNS[0].TITLE.CAPTION"
+msgid "Title"
+msgstr ""
+
+#: tfrmmain.dbgrid5.columns[1].title.caption
+msgctxt "TFRMMAIN.DBGRID5.COLUMNS[1].TITLE.CAPTION"
+msgid "foodNM"
+msgstr ""
+
+#: tfrmmain.dbgrid5.columns[2].title.caption
+msgctxt "TFRMMAIN.DBGRID5.COLUMNS[2].TITLE.CAPTION"
+msgid "foodOM"
+msgstr ""
+
+#: tfrmmain.gridfoodperdag.columns[0].title.caption
+msgctxt "TFRMMAIN.GRIDFOODPERDAG.COLUMNS[0].TITLE.CAPTION"
+msgid "foodID"
+msgstr ""
+
+#: tfrmmain.gridfoodperdag.columns[1].title.caption
+msgctxt "TFRMMAIN.GRIDFOODPERDAG.COLUMNS[1].TITLE.CAPTION"
+msgid "foodNM"
+msgstr ""
+
+#: tfrmmain.gridfoodperdag.columns[2].title.caption
+msgctxt "TFRMMAIN.GRIDFOODPERDAG.COLUMNS[2].TITLE.CAPTION"
+msgid "foodinfoAmount"
+msgstr ""
+
+#: tfrmmain.gridfoodperdag.columns[3].title.caption
+msgctxt "TFRMMAIN.GRIDFOODPERDAG.COLUMNS[3].TITLE.CAPTION"
+msgid "foodinfoTime"
+msgstr ""
+
+#: tfrmmain.tabdaginvoer.caption
+msgctxt "TFRMMAIN.TABDAGINVOER.CAPTION"
+msgid "Daginvoer"
+msgstr ""
+
+#: tfrmmain.taboverzicht.caption
+msgctxt "TFRMMAIN.TABOVERZICHT.CAPTION"
+msgid "Overzicht"
+msgstr ""
+
