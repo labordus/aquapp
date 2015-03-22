@@ -12,6 +12,8 @@ type
   { TDM }
 
   TDM = class(TDataModule)
+    dsToevoegpersoort: TDataSource;
+    dsToevoegsoort: TDataSource;
     dsBewoner: TDataSource;
     dsFoodperdag: TDatasource;
     dsFood: TDatasource;
@@ -20,8 +22,6 @@ type
     dsAquaALL: TDatasource;
     dsAqua: TDatasource;
     dsDag: TDatasource;
-    dsToevoeg: TDataSource;
-    dsToevoegsoort: TDataSource;
     dsWaardes: TDataSource;
     qryDelFoodinfo: TZQuery;
     qryFoodPerDagdagID: TLargeintField;
@@ -30,7 +30,6 @@ type
     qryFoodPerDagfoodinfoTime: TTimeField;
     qryFoodPerDagfoodNM: TStringField;
     qryFoodPerDagfoodOM: TStringField;
-    qryToevoegsoort: TZQuery;
     tblAquaaquaDepth: TLargeintField;
     tblAquaaquaHeight: TLargeintField;
     tblAquaaquaID: TLargeintField;
@@ -41,7 +40,6 @@ type
     tblDagaquaID: TLargeintField;
     tblDagdagDatum: TDateField;
     tblDagdagID: TLargeintField;
-    tblToevoeg: TZTable;
     tblWaardes: TZTable;
     ZConnection1: TZConnection;
     qryDag: TZQuery;
@@ -51,7 +49,9 @@ type
     tblFoodinfo: TZTable;
     tblFood: TZTable;
     qryFoodPerDag: TZQuery;
+    qryToevoegpersoort: TZQuery;
     ZTable1: TZTable;
+    tblToevoegsoort: TZTable;
     procedure tblFoodBeforeDelete(DataSet: TDataSet);
   private
     { private declarations }
@@ -62,6 +62,7 @@ type
 procedure SwitchAqua(iAqua: integer);
 procedure SwitchDay();
 procedure AddFood(iAmount: integer; foodtime: TTime);
+procedure AddDay(dDate: TDateTime);
 procedure RemoveFood(iDay: integer; iFood: integer);
 
 var
@@ -80,6 +81,20 @@ begin
     Close;
     ParamByName('ThisAqua').Value := iAqua;
     Open;
+  end;
+end;
+
+procedure AddDay(dDate: TDateTime);
+begin
+  with DM.tblDag do
+  begin
+//    BM := GetBookmark;
+    Insert;
+    FieldByName('dagDatum').AsDateTime := dDate;
+    FieldByName('aquaID').AsInteger := DM.tblAqua.FieldByName('aquaID').AsInteger;
+    Post;
+    ApplyUpdates;
+//    GotoBookmark(BM);
   end;
 end;
 

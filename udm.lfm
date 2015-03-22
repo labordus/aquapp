@@ -1,8 +1,8 @@
 object DM: TDM
   OldCreateOrder = False
   Height = 637
-  HorizontalOffset = 399
-  VerticalOffset = 213
+  HorizontalOffset = 1012
+  VerticalOffset = 344
   Width = 858
   object ZConnection1: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -367,42 +367,41 @@ object DM: TDM
     left = 600
     top = 116
   end
-  object tblToevoeg: TZTable
-    Connection = ZConnection1
-    Active = True
-    TableName = 'tblToevoeg'
-    left = 612
-    top = 216
-  end
-  object dsToevoeg: TDataSource
-    DataSet = tblToevoeg
-    left = 717
-    top = 216
+  object dsToevoegpersoort: TDataSource
+    DataSet = qryToevoegpersoort
+    left = 740
+    top = 429
   end
   object dsToevoegsoort: TDataSource
-    left = 717
-    top = 288
+    DataSet = tblToevoegsoort
+    left = 760
+    top = 316
   end
-  object qryToevoegsoort: TZQuery
+  object qryToevoegpersoort: TZQuery
     Connection = ZConnection1
-    Active = True
     SQL.Strings = (
-      'SELECT * FROM tblToevoegsoort JOIN tblToevoeg USING (toevoegsoortID) WHERE TBLTOEVOEG.toevoegID = :Toevoeg;'
+      'SELECT * FROM tblToevoeg WHERE toevoegsoortID = :toevoegsoort'
     )
     Params = <    
       item
         DataType = ftUnknown
-        Name = 'Toevoeg'
+        Name = 'toevoegsoort'
         ParamType = ptUnknown
       end>
-    DataSource = dsToevoeg
-    left = 612
-    top = 288
+    left = 613
+    top = 429
     ParamData = <    
       item
         DataType = ftUnknown
-        Name = 'Toevoeg'
+        Name = 'toevoegsoort'
         ParamType = ptUnknown
       end>
+  end
+  object tblToevoegsoort: TZTable
+    Connection = ZConnection1
+    Active = True
+    TableName = 'tblToevoegsoort'
+    left = 648
+    top = 317
   end
 end
