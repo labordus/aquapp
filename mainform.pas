@@ -20,6 +20,7 @@ type
     Button1: TButton;
     btnPrevDay: TButton;
     btnFoodAdd: TButton;
+    btnAddDay: TButton;
     gridFoodPerDag: TDBGrid;
     DBGrid2: TDBGrid;
     DBGrid3: TDBGrid;
@@ -27,12 +28,13 @@ type
     DBGrid5: TDBGrid;
     DBText2: TDBText;
     dtFoodTime: TDateTimePicker;
-    Label10: TLabel;
     PageControl1: TPageControl;
     btnEditAqua: TSpeedButton;
     spinFoodAmount: TSpinEdit;
     tabOverzicht: TTabSheet;
     tabDaginvoer: TTabSheet;
+    TrayIcon1: TTrayIcon;
+    procedure btnAddDayClick(Sender: TObject);
     procedure btnConfigClick(Sender: TObject);
     procedure btnFoodAddClick(Sender: TObject);
     procedure btnEditAquaClick(Sender: TObject);
@@ -96,6 +98,13 @@ begin
   finally
     FreeAndNil(frmConfig);
   end;
+end;
+
+procedure TfrmMain.btnAddDayClick(Sender: TObject);
+begin
+  AddDay(date);
+//  DM.qryDag.Last;
+//  SwitchDay();
 end;
 
 procedure TfrmMain.btnNextDayClick(Sender: TObject);
